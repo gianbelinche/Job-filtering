@@ -6,7 +6,16 @@ export default function Page() {
   return (
     <div>
       <Background />
-      <Job />
+      <Job
+        company="Photosnap"
+        new={true}
+        featured={true}
+        position="Senior Frontend Developer"
+        postedAt="1d ago"
+        contract="FullTime"
+        location="USA only"
+        tags={["Frontend", "Senior", "HTML", "CSS", "JavaScript"]}
+      />
     </div>
   );
 }

@@ -6,7 +6,7 @@ import NewBadge from "./NewBadge";
 import FeaturedBadge from "./FeaturedBadge";
 import JobTag from "./JobTag";
 
-export default function Job() {
+export default function Job(props) {
   const [hovered, setHovered] = React.useState(false);
   return (
     <Card>
@@ -16,11 +16,11 @@ export default function Job() {
           <Divider type="vertical" />
           <Col>
             <Row>
-              <h2 style={styles.name}>Eyecam-co</h2>
+              <h2 style={styles.name}>{props.company}</h2>
               <Divider type="vertical" />
-              <NewBadge visible={true}></NewBadge>
+              <NewBadge visible={props.new}></NewBadge>
               <Divider type="vertical" />
-              <FeaturedBadge visible={true}></FeaturedBadge>
+              <FeaturedBadge visible={props.featured}></FeaturedBadge>
             </Row>
             <div
               onMouseEnter={() => setHovered(!hovered)}
@@ -31,29 +31,29 @@ export default function Job() {
                   hovered ? styles.title_hovered : styles.title_not_hovered
                 }
               >
-                Fullstack Engineer
+                {props.position}
               </h2>
             </div>
             <Row>
-              <p style={styles.text}>1d ago</p>
+              <p style={styles.text}>{props.postedAt}</p>
               <Divider type="vertical" />
               <p style={styles.text}> . </p>
               <Divider type="vertical" />
-              <p style={styles.text}>Full time</p>
+              <p style={styles.text}>{props.contract}</p>
               <Divider type="vertical" />
               <p style={styles.text}> . </p>
               <Divider type="vertical" />
-              <p style={styles.text}>USA only</p>
+              <p style={styles.text}>{props.location}</p>
             </Row>
           </Col>
           <Divider type="vertical" style={{ width: 100 }} />
-          {[1, 2].map(() => (
+          {Array(5 - props.tags.length).map(() => (
             <Row style={{ flex: 1 }}></Row>
           ))}
-          {[1, 2, 3].map(() => (
+          {props.tags.map((tag) => (
             <Row style={{ flex: 1 }}>
               <Divider />
-              <JobTag text="FrontEnda"></JobTag>
+              <JobTag text={tag}></JobTag>
               <Divider />
             </Row>
           ))}
