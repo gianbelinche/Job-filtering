@@ -2,6 +2,7 @@ import React from "react";
 import Background from "../components/Background";
 import Job from "../components/Job";
 import Filter from "../components/Filter";
+import { getAll } from "../modules/jobs_api";
 
 export default function Page() {
   const [tags, setTags] = React.useState([]);
@@ -26,18 +27,7 @@ export default function Page() {
   };
 
   React.useEffect(() => {
-    setJobs([
-      {
-        company: "Eye",
-        new: true,
-        featured: true,
-        position: "Fullstack engineer",
-        postedAt: "1d ago",
-        contract: "Full",
-        location: "USA",
-        tags: ["Javascript", "Ruby"],
-      },
-    ]);
+    setJobs(getAll());
   }, []);
   return (
     <div>
