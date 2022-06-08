@@ -2,8 +2,8 @@ import React from "react";
 import Background from "../components/Background";
 import Job from "../components/Job";
 import Filter from "../components/Filter";
-import { getAll } from "../modules/jobs_api";
-import { Col, Divider, Row } from "antd";
+import { getByTags } from "../modules/jobs_api";
+import { Divider, Row } from "antd";
 
 export default function Page() {
   const [tags, setTags] = React.useState([]);
@@ -28,8 +28,9 @@ export default function Page() {
   };
 
   React.useEffect(() => {
-    setJobs(getAll());
-  }, []);
+    setJobs(getByTags(tags));
+  }, [tags]);
+
   return (
     <div>
       <Background />

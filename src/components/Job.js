@@ -25,8 +25,8 @@ export default function Job(props) {
                 <FeaturedBadge visible={props.featured}></FeaturedBadge>
               </Row>
               <div
-                onMouseEnter={() => setHovered(!hovered)}
-                onMouseLeave={() => setHovered(!hovered)}
+                onMouseEnter={() => setHovered(true)}
+                onMouseLeave={() => setHovered(false)}
               >
                 <h2
                   style={
@@ -54,7 +54,13 @@ export default function Job(props) {
             {props.tags.map((tag) => (
               <Row style={{ flex: 1 }}>
                 <Divider />
-                <JobTag text={tag} onClick={() => props.onClick(tag)}></JobTag>
+                <JobTag
+                  text={tag}
+                  onClick={() => {
+                    props.onClick(tag);
+                    setHovered(false);
+                  }}
+                ></JobTag>
                 <Divider />
               </Row>
             ))}
