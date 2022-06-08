@@ -10,8 +10,8 @@ export default function Job(props) {
   const [hovered, setHovered] = React.useState(false);
 
   return (
-    <Card>
-      <Card.Grid style={{ width: "50%" }}>
+    <Card style={{ width: "60%" }}>
+      <Card.Grid style={{ width: "100%" }}>
         <Row style={{ justifyContent: "space-between" }}>
           <Row>
             <Image src={Logo} preview={false}></Image>

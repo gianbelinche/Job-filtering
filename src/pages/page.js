@@ -3,6 +3,7 @@ import Background from "../components/Background";
 import Job from "../components/Job";
 import Filter from "../components/Filter";
 import { getAll } from "../modules/jobs_api";
+import { Col, Divider, Row } from "antd";
 
 export default function Page() {
   const [tags, setTags] = React.useState([]);
@@ -32,25 +33,30 @@ export default function Page() {
   return (
     <div>
       <Background />
-      <Filter
-        tags={tags}
-        onRemove={(tag) => removeTag(tag)}
-        onClear={() => clearTags()}
-      />
-      {jobs.map((job) => (
-        <Job
-          company={job.company}
-          new={job.new}
-          featured={job.featured}
-          position={job.position}
-          postedAt={job.postedAt}
-          contract={job.contract}
-          location={job.location}
-          tags={job.tags}
-          logo={job.logo}
-          onClick={(tag) => addTag(tag)}
-        />
-      ))}
+      <Row style={{ justifyContent: "center" }}>
+        {!(tags.length === 0) && (
+          <Filter
+            tags={tags}
+            onRemove={(tag) => removeTag(tag)}
+            onClear={() => clearTags()}
+          />
+        )}
+        <Divider></Divider>
+        {jobs.map((job) => (
+          <Job
+            company={job.company}
+            new={job.new}
+            featured={job.featured}
+            position={job.position}
+            postedAt={job.postedAt}
+            contract={job.contract}
+            location={job.location}
+            tags={job.tags}
+            logo={job.logo}
+            onClick={(tag) => addTag(tag)}
+          />
+        ))}
+      </Row>
     </div>
   );
 }

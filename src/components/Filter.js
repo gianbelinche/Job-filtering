@@ -16,8 +16,8 @@ export default function Filter(props) {
     setHovereds(hovereds_copy);
   };
   return (
-    <Card>
-      <Card.Grid style={{ width: "50%" }}>
+    <Card style={{ width: "60%" }}>
+      <Card.Grid style={{ width: "100%" }}>
         <Row style={{ justifyContent: "space-between" }}>
           <Row>
             {props.tags.map((tag, index) => (
