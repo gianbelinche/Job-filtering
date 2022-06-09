@@ -53,7 +53,7 @@ export default function Page() {
             contract={job.contract}
             location={job.location}
             tags={job.tags}
-            logo={job.logo}
+            logo={job.logo2}
             onClick={(tag) => addTag(tag)}
           />
         ))}

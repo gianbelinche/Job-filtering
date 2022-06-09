@@ -4,7 +4,6 @@ import { Card, Image, Row, Col, Divider } from "antd";
 import NewBadge from "./NewBadge";
 import FeaturedBadge from "./FeaturedBadge";
 import JobTag from "./JobTag";
-import Logo from "../images/eyecam-co.svg";
 
 export default function Job(props) {
   const [hovered, setHovered] = React.useState(false);
@@ -13,8 +12,8 @@ export default function Job(props) {
     <Card style={{ width: "60%" }}>
       <Card.Grid style={{ width: "100%" }}>
         <Row style={{ justifyContent: "space-between" }}>
-          <Row>
-            <Image src={Logo} preview={false}></Image>
+          <Row style={{ alignItems: "center" }}>
+            <Image src={props.logo} preview={false}></Image>
             <Divider type="vertical" />
             <Col>
               <Row>
