@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Job-filtering/static/css/main.fe0bb57a.css",
-    "main.js": "/Job-filtering/static/js/main.92c628d0.js",
+    "main.js": "/Job-filtering/static/js/main.b35cc5ae.js",
     "static/js/787.5168d7fa.chunk.js": "/Job-filtering/static/js/787.5168d7fa.chunk.js",
     "static/media/LeagueSpartan-VariableFont_wght.ttf": "/Job-filtering/static/media/LeagueSpartan-VariableFont_wght.04adc452edae27c7e189.ttf",
     "index.html": "/Job-filtering/index.html",
     "main.fe0bb57a.css.map": "/Job-filtering/static/css/main.fe0bb57a.css.map",
-    "main.92c628d0.js.map": "/Job-filtering/static/js/main.92c628d0.js.map",
+    "main.b35cc5ae.js.map": "/Job-filtering/static/js/main.b35cc5ae.js.map",
     "787.5168d7fa.chunk.js.map": "/Job-filtering/static/js/787.5168d7fa.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fe0bb57a.css",
-    "static/js/main.92c628d0.js"
+    "static/js/main.b35cc5ae.js"
   ]
 }
