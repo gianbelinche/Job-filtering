@@ -10,7 +10,13 @@ export default function Job(props) {
 
   return (
     <Card style={{ width: "60%" }}>
-      <Card.Grid style={{ width: "100%" }}>
+      <Card.Grid
+        style={
+          props.featured
+            ? styles.card_grid_featured
+            : styles.card_grid_not_featured
+        }
+      >
         <Row style={{ justifyContent: "space-between" }}>
           <Row style={{ alignItems: "center" }}>
             <Image src={props.logo} preview={false}></Image>
@@ -90,5 +96,14 @@ const styles = {
     fontFamily: "League Spartan",
     color: "hsl(174, 27.62%, 61.18%)",
     fontWeight: 500,
+  },
+  card_grid_featured: {
+    width: "100%",
+    borderLeftStyle: "solid",
+    borderWidth: "5px",
+    borderColor: "hsl(174, 27.62%, 61.18%)",
+  },
+  card_grid_not_featured: {
+    width: "100%",
   },
 };

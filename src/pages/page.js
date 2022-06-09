@@ -3,7 +3,7 @@ import Background from "../components/Background";
 import Job from "../components/Job";
 import Filter from "../components/Filter";
 import { getByTags } from "../modules/jobs_api";
-import { Divider, Row } from "antd";
+import { Divider, Row, Col } from "antd";
 
 export default function Page() {
   const [tags, setTags] = React.useState([]);
@@ -44,18 +44,21 @@ export default function Page() {
         )}
         <Divider></Divider>
         {jobs.map((job) => (
-          <Job
-            company={job.company}
-            new={job.new}
-            featured={job.featured}
-            position={job.position}
-            postedAt={job.postedAt}
-            contract={job.contract}
-            location={job.location}
-            tags={job.tags}
-            logo={job.logo2}
-            onClick={(tag) => addTag(tag)}
-          />
+          <>
+            <Job
+              company={job.company}
+              new={job.new}
+              featured={job.featured}
+              position={job.position}
+              postedAt={job.postedAt}
+              contract={job.contract}
+              location={job.location}
+              tags={job.tags}
+              logo={job.logo2}
+              onClick={(tag) => addTag(tag)}
+            />
+            <Divider></Divider>
+          </>
         ))}
       </Row>
     </div>
