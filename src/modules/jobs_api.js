@@ -4,7 +4,7 @@ function getCorrectLogo(logo) {
   return "/Job-filtering" + logo.slice(1, logo.length);
 }
 
-function getAll() {
+function getAll(getCorrectLogo) {
   return json.map((job) => {
     job.tags = [job.role, job.level];
     job.tags = [...job.tags, ...job.languages];
@@ -23,7 +23,7 @@ function isSubarray(subArray, Array) {
   return true;
 }
 
-export function getByTags(tags) {
-  var jobs = getAll();
+export function getByTags(tags, getCorrectLogo) {
+  var jobs = getAll(getCorrectLogo);
   return jobs.filter((job) => isSubarray(tags, job.tags));
 }

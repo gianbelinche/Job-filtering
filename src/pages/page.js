@@ -5,7 +5,7 @@ import Filter from "../components/Filter";
 import { getByTags } from "../modules/jobs_api";
 import { Divider, Row, Col } from "antd";
 
-export default function Page() {
+export default function Page(props) {
   const [tags, setTags] = React.useState([]);
   const [jobs, setJobs] = React.useState([]);
 
@@ -28,12 +28,12 @@ export default function Page() {
   };
 
   React.useEffect(() => {
-    setJobs(getByTags(tags));
-  }, [tags]);
+    setJobs(getByTags(tags, props.getCorrectLogo));
+  }, [tags, props.getCorrectLogo]);
 
   return (
     <div>
-      <Background />
+      <Background background={props.background} />
       <Row style={{ justifyContent: "center" }}>
         {!(tags.length === 0) && (
           <Filter
